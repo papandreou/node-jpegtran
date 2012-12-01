@@ -50,4 +50,18 @@ describe('JpegTran', function () {
             jpegTran.resume();
         }, 1000);
     });
+
+    it('should emit an error if an invalid image is processed', function (done) {
+        var jpegTran = new JpegTran();
+
+        jpegTran.on('error', function (err) {
+            done();
+        }).on('data', function (chunk) {
+            done(new Error('JpegTran emitted data when an error was expected'));
+        }).on('end', function (chunk) {
+            done(new Error('JpegTran emitted end when an error was expected'));
+        });
+
+        jpegTran.end(new Buffer('qwvopeqwovkqvwiejvq', 'utf-8'));
+    });
 });
