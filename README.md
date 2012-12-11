@@ -3,6 +3,11 @@ node-jpegtran
 
 The jpegtran command line utility as a readable/writable stream.
 
+If you don't have a `jpegtran` binary in your PATH, `node-jpegtran`
+will try to use one of the binaries provided by <a
+href="https://github.com/yeoman/node-jpegtran-bin">the node-jpegtran-bin
+package</a>.
+
 The constructor optionally takes an array of command line options for
 the `jpegtran` binary:
 
@@ -34,7 +39,7 @@ http.createServer(function (req, res) {
 Installation
 ------------
 
-Make sure you have node.js and npm installed, and that the `jpegtran` binary is in your PATH, then run:
+Make sure you have node.js and npm installed, then run:
 
     npm install jpegtran
 
