@@ -53,9 +53,27 @@ describe('JpegTran', function () {
 
     it('should emit an error if an invalid image is processed', function (done) {
         var jpegTran = new JpegTran();
-
         jpegTran.on('error', function (err) {
             done();
+        }).on('data', function (chunk) {
+            done(new Error('JpegTran emitted data when an error was expected'));
+        }).on('end', function (chunk) {
+            done(new Error('JpegTran emitted end when an error was expected'));
+        });
+
+        jpegTran.end(new Buffer('qwvopeqwovkqvwiejvq', 'utf-8'));
+    });
+
+    it('should emit a single error if an invalid command line is specified', function (done) {
+        var jpegTran = new JpegTran(['-optimize', 'qcwecqweqbar']),
+            seenError = false;
+        jpegTran.on('error', function (err) {
+            if (seenError) {
+                done(new Error('More than one error event was emitted'));
+            } else {
+                seenError = true;
+                setTimeout(done, 100);
+            }
         }).on('data', function (chunk) {
             done(new Error('JpegTran emitted data when an error was expected'));
         }).on('end', function (chunk) {
