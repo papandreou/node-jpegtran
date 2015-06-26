@@ -1,3 +1,4 @@
+/*global describe, it, __dirname, setTimeout*/
 var expect = require('expect.js'),
     JpegTran = require('../lib/JpegTran'),
     Path = require('path'),

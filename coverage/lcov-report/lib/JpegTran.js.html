@@ -1,0 +1,426 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for lib/JpegTran.js</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../prettify.css">
+    <link rel="stylesheet" href="../base.css">
+    <style type='text/css'>
+        div.coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class="header high">
+    <h1>Code coverage report for <span class="entity">lib/JpegTran.js</span></h1>
+    <h2>
+        Statements: <span class="metric">89.55% <small>(60 / 67)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">75% <small>(27 / 36)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">92.86% <small>(13 / 14)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">89.55% <small>(60 / 67)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
+    </h2>
+    <div class="path"><a href="../index.html">All files</a> &#187; <a href="index.html">lib/</a> &#187; JpegTran.js</div>
+</div>
+<div class="body">
+<pre><table class="coverage">
+<tr><td class="line-count">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128</td><td class="line-coverage"><span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">14</span>
+<span class="cline-any cline-yes">14</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">var childProcess = require('child_process'),
+    Stream = require('stream').Stream,
+    util = require('util'),
+    which = require('which'),
+    memoizeAsync = require('memoizeasync');
+&nbsp;
+function JpegTran(jpegTranArgs) {
+    Stream.call(this);
+&nbsp;
+    this.jpegTranArgs = jpegTranArgs;
+&nbsp;
+    this.writable = this.readable = true;
+&nbsp;
+    this.hasEnded = false;
+}
+&nbsp;
+util.inherits(JpegTran, Stream);
+&nbsp;
+JpegTran.getBinaryPath = memoizeAsync(function (cb) {
+    which('jpegtran', function (err, jpegTranBinaryPath) {
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (err) {
+<span class="cstat-no" title="statement not covered" >            jpegTranBinaryPath = require('jpegtran-bin').path;</span>
+        }
+        <span class="missing-if-branch" title="else path not taken" >E</span>if (jpegTranBinaryPath) {
+            cb(null, jpegTranBinaryPath);
+        } else {
+<span class="cstat-no" title="statement not covered" >            cb(new Error('No jpegtran binary in PATH and jpegtran-bin does not provide a pre-built binary for your architecture'));</span>
+        }
+    });
+});
+&nbsp;
+JpegTran.prototype._reportError = function (err) {
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (!this.hasEnded) {
+        this.hasEnded = true;
+        this.emit('error', err);
+    }
+};
+&nbsp;
+JpegTran.prototype.write = function (chunk) {
+    if (this.jpegTranProcess) {
+        this.jpegTranProcess.stdin.write(chunk);
+    } else {
+        if (!this.bufferedChunks) {
+            this.bufferedChunks = [];
+            JpegTran.getBinaryPath(function (err, jpegTranBinaryPath) {
+                <span class="missing-if-branch" title="if path not taken" >I</span>if (err) {
+<span class="cstat-no" title="statement not covered" >                    return this._reportError(err);</span>
+                }
+                this.commandLine = jpegTranBinaryPath + (this.jpegTranArgs ? ' ' + this.jpegTranArgs.join(' ') : ''); // For debugging
+                this.jpegTranProcess = childProcess.spawn(jpegTranBinaryPath, this.jpegTranArgs);
+&nbsp;
+                this.seenDataOnStdout = false;
+&nbsp;
+                this.jpegTranProcess.on('error', this._reportError.bind(this));
+&nbsp;
+                // The child process might close its STDIN prematurely and emit EPIPE when the next chunk is written.
+                // That's not necessarily an error, so prevent it from causing an exception:
+                this.jpegTranProcess.stdin.on('error', <span class="fstat-no" title="function not covered" >function () {</span>});
+&nbsp;
+                this.jpegTranProcess.on('exit', function (exitCode) {
+                    <span class="missing-if-branch" title="if path not taken" >I</span>if (exitCode &gt; 0 &amp;&amp; !this.hasEnded) {
+<span class="cstat-no" title="statement not covered" >                        return this._reportError(new Error('The jpegtran process exited with a non-zero exit code: ' + exitCode));</span>
+<span class="cstat-no" title="statement not covered" >                        this.hasEnded = true;</span>
+                    }
+                }.bind(this));
+&nbsp;
+                this.jpegTranProcess.stdout.on('data', function (chunk) {
+                    this.seenDataOnStdout = true;
+                    this.emit('data', chunk);
+                }.bind(this)).on('end', function () {
+                    <span class="missing-if-branch" title="else path not taken" >E</span>if (!this.hasEnded) {
+                        if (this.seenDataOnStdout) {
+                            this.emit('end');
+                        } else {
+                            this._reportError(new Error('JpegTran: The stdout stream ended without emitting any data'));
+                        }
+                        this.hasEnded = true;
+                    }
+                }.bind(this));
+&nbsp;
+                if (this.isPaused) {
+                    this.jpegTranProcess.stdout.pause();
+                }
+&nbsp;
+                this.bufferedChunks.forEach(function (chunk) {
+                    if (chunk === null) {
+                        this.jpegTranProcess.stdin.end();
+                    } else {
+                        this.jpegTranProcess.stdin.write(chunk);
+                    }
+                }, this);
+            }.bind(this));
+        }
+        this.bufferedChunks.push(chunk);
+    }
+};
+&nbsp;
+JpegTran.prototype.end = function (chunk) {
+    if (chunk) {
+        this.write(chunk);
+    }
+    if (this.jpegTranProcess) {
+        this.jpegTranProcess.stdin.end();
+    } else {
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (!this.bufferedChunks) {
+            // .end called without an argument and with no preceeding .write calls. Make sure that we do create a process in that case:
+<span class="cstat-no" title="statement not covered" >            this.write(new Buffer(0));</span>
+        }
+        this.bufferedChunks.push(null);
+    }
+};
+&nbsp;
+JpegTran.prototype.pause = function () {
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (this.jpegTranProcess) {
+<span class="cstat-no" title="statement not covered" >        this.jpegTranProcess.stdout.pause();</span>
+    }
+    this.isPaused = true;
+};
+&nbsp;
+JpegTran.prototype.resume = function () {
+    <span class="missing-if-branch" title="else path not taken" >E</span>if (this.jpegTranProcess) {
+        this.jpegTranProcess.stdout.resume();
+    }
+    this.isPaused = false;
+};
+&nbsp;
+module.exports = JpegTran;
+&nbsp;</pre></td></tr>
+</table></pre>
+
+</div>
+<div class="footer">
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri Jun 26 2015 11:45:06 GMT+0200 (CEST)</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>

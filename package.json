@@ -12,12 +12,16 @@
     "which": "=1.0.5"
   },
   "devDependencies": {
-    "mocha": "=1.7.3",
-    "expect.js": "=0.2.0"
+    "expect.js": "=0.2.0",
+    "istanbul": "0.3.16",
+    "jshint": "2.8.0",
+    "mocha": "2.2.5"
   },
   "scripts": {
-    "prepublish": "mocha",
-    "test": "mocha"
+    "lint": "jshint .",
+    "test": "mocha && npm run lint",
+    "travis": "npm test && npm run coverage && (<coverage/lcov.info coveralls || true)",
+    "coverage": "NODE_ENV=development istanbul cover _mocha -- --reporter dot && echo google-chrome coverage/lcov-report/index.html"
   },
   "repository": {
     "type": "git",

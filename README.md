@@ -1,6 +1,11 @@
 node-jpegtran
 =============
 
+[![NPM version](https://badge.fury.io/js/jpegtran.svg)](http://badge.fury.io/js/jpegtran)
+[![Build Status](https://travis-ci.org/papandreou/node-jpegtran.svg?branch=master)](https://travis-ci.org/papandreou/node-jpegtran)
+[![Coverage Status](https://coveralls.io/repos/papandreou/node-jpegtran/badge.svg)](https://coveralls.io/r/papandreou/node-jpegtran)
+[![Dependency Status](https://david-dm.org/papandreou/node-jpegtran.svg)](https://david-dm.org/papandreou/node-jpegtran)
+
 The jpegtran command line utility as a readable/writable stream.
 
 If you don't have a `jpegtran` binary in your PATH, `node-jpegtran`
