@@ -12,10 +12,11 @@
     "which": "1.1.1"
   },
   "devDependencies": {
-    "expect.js": "=0.2.0",
     "istanbul": "0.3.16",
     "jshint": "2.8.0",
-    "mocha": "2.2.5"
+    "mocha": "2.2.5",
+    "unexpected": "9.4.0",
+    "unexpected-stream": "1.2.0"
   },
   "scripts": {
     "lint": "jshint .",

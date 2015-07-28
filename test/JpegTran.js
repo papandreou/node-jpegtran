@@ -1,25 +1,20 @@
 /*global describe, it, __dirname, setTimeout*/
-var expect = require('expect.js'),
+var expect = require('unexpected').clone().use(require('unexpected-stream')),
     JpegTran = require('../lib/JpegTran'),
     Path = require('path'),
     fs = require('fs');
 
 describe('JpegTran', function () {
-    it('should produce a smaller file when run with -grayscale', function (done) {
-        var jpegTran = new JpegTran(['-grayscale']),
-            chunks = [];
-        fs.createReadStream(Path.resolve(__dirname, 'turtle.jpg'))
-            .pipe(jpegTran)
-            .on('data', function (chunk) {
-                chunks.push(chunk);
-            })
-            .on('end', function () {
-                var resultJpegBuffer = Buffer.concat(chunks);
-                expect(resultJpegBuffer.length).to.be.greaterThan(0);
-                expect(resultJpegBuffer.length).to.be.lessThan(105836);
-                done();
-            })
-            .on('error', done);
+    it('should produce a smaller file when run with -grayscale', function () {
+        return expect(
+            fs.createReadStream(Path.resolve(__dirname, 'turtle.jpg')),
+            'when piped through',
+            new JpegTran(['-grayscale']),
+            'to yield output satisfying',
+            function (resultJpegBuffer) {
+                expect(resultJpegBuffer.length, 'to be within', 0, 105836);
+            }
+        );
     });
 
     it('should not emit data events while paused', function (done) {
@@ -42,9 +37,7 @@ describe('JpegTran', function () {
                     chunks.push(chunk);
                 })
                 .on('end', function () {
-                    var resultJpegBuffer = Buffer.concat(chunks);
-                    expect(resultJpegBuffer.length).to.be.greaterThan(0);
-                    expect(resultJpegBuffer.length).to.be.lessThan(105836);
+                    expect(Buffer.concat(chunks).length, 'to be within', 0, 105836);
                     done();
                 });
 
