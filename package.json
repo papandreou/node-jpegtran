@@ -8,7 +8,6 @@
   },
   "dependencies": {
     "jpegtran-bin": "=3.0.4",
-    "memoizeasync": "0.8.0",
     "which": "1.1.1"
   },
   "devDependencies": {
