@@ -1,8 +1,11 @@
 /*global describe, it, __dirname, setTimeout*/
-var expect = require('unexpected').clone().use(require('unexpected-stream')),
-    JpegTran = require('../lib/JpegTran'),
-    Path = require('path'),
-    fs = require('fs');
+var expect = require('unexpected').clone()
+    .use(require('unexpected-stream'))
+    .use(require('unexpected-sinon'));
+var sinon = require('sinon');
+var JpegTran = require('../lib/JpegTran');
+var Path = require('path');
+var fs = require('fs');
 
 describe('JpegTran', function () {
     it('should produce a smaller file when run with -grayscale', function () {
@@ -75,5 +78,29 @@ describe('JpegTran', function () {
         });
 
         jpegTran.end(new Buffer('qwvopeqwovkqvwiejvq', 'utf-8'));
+    });
+
+    describe('#destroy', function () {
+        it('should kill the underlying child process', function () {
+            var jpegTran = new JpegTran(['-grayscale']);
+
+            return expect.promise(function (run) {
+                jpegTran.write('JFIF');
+                setTimeout(run(function waitForJpegTranProcess() {
+                    var jpegTranProcess = jpegTran.jpegTranProcess;
+                    if (jpegTran.jpegTranProcess) {
+                        sinon.spy(jpegTranProcess, 'kill');
+                        jpegTran.destroy();
+                        expect(jpegTranProcess.kill, 'to have calls satisfying', function () {
+                            jpegTranProcess.kill();
+                        });
+                        expect(jpegTran.jpegTranProcess, 'to be falsy');
+                        expect(jpegTran.bufferedChunks, 'to be falsy');
+                    } else {
+                        setTimeout(run(waitForJpegTranProcess), 0);
+                    }
+                }), 0);
+            });
+        });
     });
 });
