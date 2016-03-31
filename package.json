@@ -10,8 +10,6 @@
     "jpegtran-bin": "=3.0.4",
     "memoizeasync": "0.8.0",
     "mocha": "2.4.5",
-    "unexpected": "10.10.12",
-    "unexpected-stream": "2.0.3",
     "which": "1.1.1"
   },
   "devDependencies": {
@@ -19,9 +17,9 @@
     "jshint": "2.8.0",
     "mocha": "2.2.5",
     "sinon": "1.17.3",
-    "unexpected": "9.4.0",
+    "unexpected": "10.11.1",
     "unexpected-sinon": "10.2.0",
-    "unexpected-stream": "1.2.0"
+    "unexpected-stream": "2.0.3"
   },
   "scripts": {
     "lint": "jshint .",
