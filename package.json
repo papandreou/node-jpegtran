@@ -1,6 +1,6 @@
 {
   "name": "jpegtran",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "The jpegtran utility as a readable/writable stream",
   "main": "lib/JpegTran.js",
   "directories": {
