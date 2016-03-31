@@ -6,6 +6,11 @@ var sinon = require('sinon');
 var JpegTran = require('../lib/JpegTran');
 var Path = require('path');
 var fs = require('fs');
+var semver = require('semver');
+
+it.skipIf = function (condition) {
+    (condition ? it.skip : it).apply(it, Array.prototype.slice.call(arguments, 1));
+};
 
 describe('JpegTran', function () {
     it('should produce a smaller file when run with -grayscale', function () {
@@ -20,7 +25,7 @@ describe('JpegTran', function () {
         );
     });
 
-    it('should not emit data events while paused', function (done) {
+    it.skipIf(semver.satisfies(process.version.replace(/^v/, ''), '>=0.12.0'), 'should not emit data events while paused', function (done) {
         var jpegTran = new JpegTran(['-grayscale']);
 
         function fail() {

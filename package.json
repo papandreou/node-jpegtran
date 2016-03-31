@@ -16,6 +16,7 @@
     "istanbul": "0.3.16",
     "jshint": "2.8.0",
     "mocha": "2.2.5",
+    "semver": "5.1.0",
     "sinon": "1.17.3",
     "unexpected": "10.11.1",
     "unexpected-sinon": "10.2.0",
