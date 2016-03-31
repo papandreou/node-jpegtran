@@ -91,11 +91,15 @@ describe('JpegTran', function () {
                     if (jpegTran.jpegTranProcess) {
                         sinon.spy(jpegTranProcess, 'kill');
                         jpegTran.destroy();
+                        sinon.spy(jpegTran, 'emit');
                         expect(jpegTranProcess.kill, 'to have calls satisfying', function () {
                             jpegTranProcess.kill();
                         });
                         expect(jpegTran.jpegTranProcess, 'to be falsy');
                         expect(jpegTran.bufferedChunks, 'to be falsy');
+                        setTimeout(run(function () {
+                            expect(jpegTran.emit, 'to have calls satisfying', []);
+                        }), 10);
                     } else {
                         setTimeout(run(waitForJpegTranProcess), 0);
                     }
