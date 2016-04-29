@@ -8,7 +8,7 @@
   },
   "dependencies": {
     "jpegtran-bin": "=3.0.4",
-    "memoizeasync": "0.8.0",
+    "memoizeasync": "0.9.0",
     "mocha": "2.4.5",
     "which": "1.1.1"
   },
