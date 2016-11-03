@@ -1,21 +1,26 @@
 {
   "name": "jpegtran",
-  "version": "0.2.0",
+  "version": "1.0.4",
   "description": "The jpegtran utility as a readable/writable stream",
   "main": "lib/JpegTran.js",
   "directories": {
     "test": "test"
   },
   "dependencies": {
-    "jpegtran-bin": "=3.0.4",
+    "jpegtran-bin": "=3.1.0",
+    "memoizeasync": "0.9.0",
+    "mocha": "2.4.5",
     "which": "1.1.1"
   },
   "devDependencies": {
     "istanbul": "0.3.16",
     "jshint": "2.8.0",
     "mocha": "2.2.5",
-    "unexpected": "9.4.0",
-    "unexpected-stream": "1.2.0"
+    "semver": "5.1.0",
+    "sinon": "1.17.3",
+    "unexpected": "10.11.1",
+    "unexpected-sinon": "10.2.0",
+    "unexpected-stream": "2.0.3"
   },
   "scripts": {
     "lint": "jshint .",
@@ -38,6 +43,6 @@
     "read/write",
     "duplex"
   ],
-  "author": "Andreas Lind Petersen <andreas@one.com>",
+  "author": "Andreas Lind <andreas@one.com>",
   "license": "BSD-3-Clause"
 }
