@@ -7,9 +7,9 @@
     "test": "test"
   },
   "dependencies": {
-    "jpegtran-bin": "3.2.0",
-    "memoizeasync": "1.0.0",
-    "which": "1.2.14"
+    "jpegtran-bin": "^3.2.0",
+    "memoizeasync": "^1.0.0",
+    "which": "^1.2.14"
   },
   "devDependencies": {
     "istanbul": "0.3.16",
