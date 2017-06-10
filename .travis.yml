@@ -5,5 +5,6 @@ node_js:
   - "4"
   - "6"
   - "7"
+  - "8"
 before_install: "sudo apt-get update && sudo apt-get install -y libjpeg-progs && npm install -g npm && npm cache clean"
 script: "npm run-script travis"
