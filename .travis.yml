@@ -1,7 +1,8 @@
 language: node_js
 node_js:
-  - "6"
-  - "7"
-  - "8"
-before_install: "sudo apt-get update && sudo apt-get install -y libjpeg-progs"
-script: "npm run-script travis"
+  - '6'
+  - '7'
+  - '8'
+  - '10'
+before_install: 'sudo apt-get update && sudo apt-get install -y libjpeg-progs'
+script: 'npm run-script travis'
