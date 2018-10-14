@@ -17,15 +17,16 @@ it.skipIf = function(condition) {
 };
 
 describe('JpegTran', () => {
-  it('should produce a smaller file when run with -grayscale', () => expect(
-    fs.createReadStream(Path.resolve(__dirname, 'turtle.jpg')),
-    'when piped through',
-    new JpegTran(['-grayscale']),
-    'to yield output satisfying',
-    resultJpegBuffer => {
-      expect(resultJpegBuffer.length, 'to be within', 0, 105836);
-    }
-  ));
+  it('should produce a smaller file when run with -grayscale', () =>
+    expect(
+      fs.createReadStream(Path.resolve(__dirname, 'turtle.jpg')),
+      'when piped through',
+      new JpegTran(['-grayscale']),
+      'to yield output satisfying',
+      resultJpegBuffer => {
+        expect(resultJpegBuffer.length, 'to be within', 0, 105836);
+      }
+    ));
 
   it.skipIf(
     semver.satisfies(process.version.replace(/^v/, ''), '>=0.12.0'),
@@ -111,13 +112,9 @@ describe('JpegTran', () => {
               sinon.spy(jpegTranProcess, 'kill');
               jpegTran.destroy();
               sinon.spy(jpegTran, 'emit');
-              expect(
-                jpegTranProcess.kill,
-                'to have calls satisfying',
-                () => {
-                  jpegTranProcess.kill();
-                }
-              );
+              expect(jpegTranProcess.kill, 'to have calls satisfying', () => {
+                jpegTranProcess.kill();
+              });
               expect(jpegTran.jpegTranProcess, 'to be falsy');
               expect(jpegTran.bufferedChunks, 'to be falsy');
               setTimeout(
