@@ -12,9 +12,12 @@
     "which": "^1.2.14"
   },
   "devDependencies": {
+    "eslint": "^5.7.0",
+    "eslint-config-pretty-standard": "^2.0.0",
+    "eslint-plugin-prettier": "^3.0.0",
     "istanbul": "^0.4.5",
-    "jshint": "^2.9.4",
     "mocha": "^5.2.0",
+    "prettier": "^1.14.3",
     "semver": "^5.3.0",
     "sinon": "^6.3.5",
     "unexpected": "^10.27.0",
@@ -22,7 +25,7 @@
     "unexpected-stream": "^3.0.0"
   },
   "scripts": {
-    "lint": "jshint .",
+    "lint": "eslint .",
     "test": "mocha && npm run lint",
     "travis": "npm test && npm run coverage && (<coverage/lcov.info coveralls || true)",
     "coverage": "NODE_ENV=development istanbul cover _mocha -- --reporter dot && echo google-chrome coverage/lcov-report/index.html"
