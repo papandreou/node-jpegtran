@@ -5,4 +5,4 @@ node_js:
   - '8'
   - '10'
 before_install: 'sudo apt-get update && sudo apt-get install -y libjpeg-progs'
-script: 'npm run-script travis'
+script: 'npm run ci'
