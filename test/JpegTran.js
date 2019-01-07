@@ -23,9 +23,9 @@ describe('JpegTran', () => {
       'when piped through',
       new JpegTran(['-grayscale']),
       'to yield output satisfying',
-      resultJpegBuffer => {
+      expect.it(resultJpegBuffer => {
         expect(resultJpegBuffer.length, 'to be within', 0, 105836);
-      }
+      })
     ));
 
   it.skipIf(
