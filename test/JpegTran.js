@@ -63,7 +63,7 @@ describe('JpegTran', () => {
   it('should emit an error if an invalid image is processed', done => {
     const jpegTran = new JpegTran();
     jpegTran
-      .on('error', err => {
+      .on('error', () => {
         done();
       })
       .on('data', chunk => {
@@ -81,7 +81,7 @@ describe('JpegTran', () => {
 
     let seenError = false;
     jpegTran
-      .on('error', err => {
+      .on('error', () => {
         if (seenError) {
           done(new Error('More than one error event was emitted'));
         } else {
