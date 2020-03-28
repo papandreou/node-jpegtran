@@ -8,7 +8,7 @@ const Path = require('path');
 const fs = require('fs');
 const semver = require('semver');
 
-it.skipIf = function(condition) {
+it.skipIf = function (condition) {
   (condition ? it.skip : it).apply(
     it,
     Array.prototype.slice.call(arguments, 1)
@@ -22,7 +22,7 @@ describe('JpegTran', () => {
       'when piped through',
       new JpegTran(['-grayscale']),
       'to yield output satisfying',
-      expect.it(resultJpegBuffer => {
+      expect.it((resultJpegBuffer) => {
         expect(resultJpegBuffer.length, 'to be within', 0, 105836);
       })
     ));
@@ -30,7 +30,7 @@ describe('JpegTran', () => {
   it.skipIf(
     semver.satisfies(process.version.replace(/^v/, ''), '>=0.12.0'),
     'should not emit data events while paused',
-    done => {
+    (done) => {
       const jpegTran = new JpegTran(['-grayscale']);
 
       function fail() {
@@ -46,7 +46,7 @@ describe('JpegTran', () => {
         const chunks = [];
 
         jpegTran
-          .on('data', chunk => {
+          .on('data', (chunk) => {
             chunks.push(chunk);
           })
           .on('end', () => {
@@ -59,23 +59,23 @@ describe('JpegTran', () => {
     }
   );
 
-  it('should emit an error if an invalid image is processed', done => {
+  it('should emit an error if an invalid image is processed', (done) => {
     const jpegTran = new JpegTran();
     jpegTran
       .on('error', () => {
         done();
       })
-      .on('data', chunk => {
+      .on('data', (chunk) => {
         done(new Error('JpegTran emitted data when an error was expected'));
       })
-      .on('end', chunk => {
+      .on('end', (chunk) => {
         done(new Error('JpegTran emitted end when an error was expected'));
       });
 
     jpegTran.end(Buffer.from('qwvopeqwovkqvwiejvq', 'utf-8'));
   });
 
-  it('should emit a single error if an invalid command line is specified', done => {
+  it('should emit a single error if an invalid command line is specified', (done) => {
     const jpegTran = new JpegTran(['-optimize', 'qcwecqweqbar']);
 
     let seenError = false;
@@ -88,10 +88,10 @@ describe('JpegTran', () => {
           setTimeout(done, 100);
         }
       })
-      .on('data', chunk => {
+      .on('data', (chunk) => {
         done(new Error('JpegTran emitted data when an error was expected'));
       })
-      .on('end', chunk => {
+      .on('end', (chunk) => {
         done(new Error('JpegTran emitted end when an error was expected'));
       });
 
@@ -102,7 +102,7 @@ describe('JpegTran', () => {
     it('should kill the underlying child process', () => {
       const jpegTran = new JpegTran(['-grayscale']);
 
-      return expect.promise(run => {
+      return expect.promise((run) => {
         jpegTran.write('JFIF');
         setTimeout(
           run(function waitForJpegTranProcess() {
