@@ -46,7 +46,9 @@ http
 
 Make sure you have node.js and npm installed, then run:
 
-    npm install jpegtran
+```
+npm install jpegtran
+```
 
 ## Releases
 
