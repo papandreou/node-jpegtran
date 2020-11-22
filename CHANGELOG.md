@@ -1,3 +1,23 @@
+### v2.0.0 (2020-11-22)
+
+#### Pull requests
+
+- [#41](https://github.com/papandreou/node-jpegtran/pull/41) Upgrade prettier to version 2.2.0 ([depfu[bot]](mailto:23717796+depfu[bot]@users.noreply.github.com))
+- [#40](https://github.com/papandreou/node-jpegtran/pull/40) Upgrade unexpected-sinon to version 11.0.0 ([depfu[bot]](mailto:23717796+depfu[bot]@users.noreply.github.com))
+- [#38](https://github.com/papandreou/node-jpegtran/pull/38) Upgrade eslint-config-standard to version 16.0.1 ([depfu[bot]](mailto:23717796+depfu[bot]@users.noreply.github.com))
+- [#36](https://github.com/papandreou/node-jpegtran/pull/36) Upgrade eslint-config-standard to version 15.0.0 ([depfu[bot]](mailto:23717796+depfu[bot]@users.noreply.github.com))
+- [#35](https://github.com/papandreou/node-jpegtran/pull/35) Upgrade prettier to version 2.1.0 ([depfu[bot]](mailto:23717796+depfu[bot]@users.noreply.github.com))
+- [#34](https://github.com/papandreou/node-jpegtran/pull/34) Upgrade eslint-plugin-mocha to version 8.0.0 ([depfu[bot]](mailto:23717796+depfu[bot]@users.noreply.github.com))
+
+#### Commits to master
+
+- [Use backticks syntax in md](https://github.com/papandreou/node-jpegtran/commit/9cee145c7cd0c2e59a8ae7ca167578ea5cc1f2a7) ([Andreas Lind](mailto:andreaslindpetersen@gmail.com))
+- [Add CHANGELOG.md + offline-github-changelog integration](https://github.com/papandreou/node-jpegtran/commit/3bc282cbd8dacbfd0b788ef5138df25ca7a445d1) ([Andreas Lind](mailto:andreaslindpetersen@gmail.com))
+- [prettier --write README.md](https://github.com/papandreou/node-jpegtran/commit/2d748a4390e04c9c5d822636a839bbfda1a15c6c) ([Andreas Lind](mailto:andreaslindpetersen@gmail.com))
+- [Brush up .prettierignore](https://github.com/papandreou/node-jpegtran/commit/609d29395143142cbff5d7396db7d2b556d7b80a) ([Andreas Lind](mailto:andreaslindpetersen@gmail.com))
+- [Also use prettier to check \*.json and \*.md](https://github.com/papandreou/node-jpegtran/commit/9095772b126e8200e3be1f36dab23b4347203aa5) ([Andreas Lind](mailto:andreaslindpetersen@gmail.com))
+- [+2 more](https://github.com/papandreou/node-jpegtran/compare/v1.1.0...v2.0.0)
+
 ### v1.1.0 (2020-07-22)
 
 #### Pull requests
@@ -100,18 +120,21 @@
 - [Forward errors emitted by the child process to the JpegTran instance.](https://github.com/papandreou/node-jpegtran/commit/4fbdbc6a0129256fbb499d821cdf1019b2300982) ([Andreas Lind Petersen](mailto:andreas@one.com))
 
 ### v0.0.4
+
 - [Release 0.0.4.](https://github.com/papandreou/node-jpegtran/commit/8a12fc6f95acc9cee101c00bfadb3f04b07a0714) ([Andreas Lind Petersen](mailto:andreas@one.com))
 - [Expose getBinaryPath on the constructor.](https://github.com/papandreou/node-jpegtran/commit/893c5e226a2f726a0dca159dbe93ef39d66cf6b1) ([Andreas Lind Petersen](mailto:andreas@one.com))
 - [Prefer a jpegtran binary in PATH over the ones provided by jpegtran-bin.](https://github.com/papandreou/node-jpegtran/commit/2e539c795cb1fb14411dea92656e45d0a267eba6) ([Andreas Lind Petersen](mailto:andreas@one.com))
 
 ### v0.0.3
+
 - [Release 0.0.3.](https://github.com/papandreou/node-jpegtran/commit/2e090688da60505a799211d2623c67b52705e547) ([Andreas Lind Petersen](mailto:andreas@one.com))
 - [Get prebuilt binaries from jpegtran-bin. Fixes \#1.](https://github.com/papandreou/node-jpegtran/commit/657809da4290bff954556dd6624a02ecb0646086) ([Andreas Lind Petersen](mailto:andreas@one.com))
 
 ### v0.0.2
+
 - [Release 0.0.2.](https://github.com/papandreou/node-jpegtran/commit/5e0bb5b022724aeefcec90cb3de9bcd53116c858) ([Andreas Lind Petersen](mailto:andreas@one.com))
 - [Emit an error if the jpegtran process doesn't output anything on stdout before ending.](https://github.com/papandreou/node-jpegtran/commit/59ab937f8df134d9daaa292e8d686bbe0cac7c59) ([Andreas Lind Petersen](mailto:andreas@one.com))
 
 ### v0.0.1
-- [Initial commit, release 0.0.1.](https://github.com/papandreou/node-jpegtran/commit/0e5125a5bde368a5ea1e7715083fa59ef5d8b8d9) ([Andreas Lind Petersen](mailto:andreas@one.com))
 
+- [Initial commit, release 0.0.1.](https://github.com/papandreou/node-jpegtran/commit/0e5125a5bde368a5ea1e7715083fa59ef5d8b8d9) ([Andreas Lind Petersen](mailto:andreas@one.com))
