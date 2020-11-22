@@ -1,5 +1,4 @@
-node-jpegtran
-=============
+# node-jpegtran
 
 [![NPM version](https://badge.fury.io/js/jpegtran.svg)](http://badge.fury.io/js/jpegtran)
 [![Build Status](https://travis-ci.org/papandreou/node-jpegtran.svg?branch=master)](https://travis-ci.org/papandreou/node-jpegtran)
@@ -18,7 +17,7 @@ the `jpegtran` binary:
 
 ```javascript
 var JpegTran = require('jpegtran'),
-    myJpegTranslator = new JpegTran(['-rotate', 90, '-progressive']);
+  myJpegTranslator = new JpegTran(['-rotate', 90, '-progressive']);
 
 sourceStream.pipe(myJpegTranslator).pipe(destinationStream);
 ```
@@ -28,27 +27,27 @@ version of the request body):
 
 ```javascript
 var JpegTran = require('jpegtran'),
-    http = require('http');
+  http = require('http');
 
-http.createServer(function (req, res) {
+http
+  .createServer(function (req, res) {
     if (req.headers['content-type'] === 'image/jpeg') {
-        res.writeHead(200, {'Content-Type': 'image/jpeg'});
-        req.pipe(new JpegTran(['-grayscale', '-flip', 'horizontal'])).pipe(res);
+      res.writeHead(200, { 'Content-Type': 'image/jpeg' });
+      req.pipe(new JpegTran(['-grayscale', '-flip', 'horizontal'])).pipe(res);
     } else {
-        res.writeHead(400);
-        res.end('Feed me a JPEG!');
+      res.writeHead(400);
+      res.end('Feed me a JPEG!');
     }
-}).listen(1337);
+  })
+  .listen(1337);
 ```
 
-Installation
-------------
+## Installation
 
 Make sure you have node.js and npm installed, then run:
 
     npm install jpegtran
 
-License
--------
+## License
 
 3-clause BSD license -- see the `LICENSE` file for details.
