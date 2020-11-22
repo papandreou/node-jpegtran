@@ -30,7 +30,7 @@
     "unexpected-stream": "^5.0.0"
   },
   "scripts": {
-    "lint": "eslint . && prettier --check '**/*.js'",
+    "lint": "eslint . && prettier --check '**/*.{js,json,md}'",
     "coverage": "NODE_ENV=development nyc --reporter=lcov --reporter=text --all -- npm test && echo google-chrome coverage/lcov-report/index.html",
     "test": "mocha",
     "test:ci": "npm test && npm run coverage"
