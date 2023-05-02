@@ -9,7 +9,7 @@
   "dependencies": {
     "jpegtran-bin": "^7.0.0",
     "memoizeasync": "^1.0.0",
-    "which": "^2.0.1"
+    "which": "^3.0.1"
   },
   "devDependencies": {
     "eslint": "^8.6.0",
